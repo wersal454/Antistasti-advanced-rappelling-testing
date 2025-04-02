@@ -679,9 +679,9 @@ AUR_Enable_Rappelling_Animation = {
 		[[_player],"AUR_Enable_Rappelling_Animation_Global"] call AUR_RemoteExecServer;
 	};
 
-	if(_player != player) then {
+	/* if(_player != player) then {
 		_player enableSimulation false;
-	};
+	}; */
 	
 	if(call AUR_Has_Addon_Animations_Installed) then {		
 		if([_player] call AUR_Current_Weapon_Type_Selected == "HANDGUN") then {

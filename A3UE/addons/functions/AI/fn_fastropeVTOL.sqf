@@ -1,4 +1,4 @@
-#include "..\..\script_component.hpp"
+#include "..\script_component.hpp"
 FIX_LINE_NUMBERS()
 
 params ["_veh", "_groupX", "_positionX", "_posOrigin", "_heli"];
@@ -124,7 +124,7 @@ _driver action ["VectoringUp", _veh];
 _driver action ["VectoringUp", _veh];
 if (alive _veh && canMove _veh) then
 {
-	[_veh] call A3A_fnc_smokeCoverAuto;
+	/* [_veh] call A3A_fnc_smokeCoverAuto;
 	_veh setVelocity [0,0,0];
 	_veh setVectorUp [0,0,1];
 	private _platformData = productVersion;
@@ -162,10 +162,10 @@ if (alive _veh && canMove _veh) then
 			};
 			sleep (2 + random 2);
 		} forEach units _groupX;
-	} else {
+	} else { */
 		[_veh] call A3A_fnc_smokeCoverAuto;
 		[_veh] spawn AR_Rappel_All_Cargo;
-	};
+	//};
 };
 
 _driver action ["VTOLVectoringCancel", _veh];

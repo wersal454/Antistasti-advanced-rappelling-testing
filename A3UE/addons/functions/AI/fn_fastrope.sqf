@@ -1,4 +1,4 @@
-#include "..\..\script_component.hpp"
+#include "..\script_component.hpp"
 FIX_LINE_NUMBERS()
 
 params ["_veh", "_groupX", "_positionX", "_posOrigin", "_heli"];
@@ -47,7 +47,7 @@ if (canMove _veh) then {
 };
 if (alive _veh && canMove _veh) then
 {   
-	private _platformData = productVersion;
+	/* private _platformData = productVersion;
     private _platform = _platformData select 6;
     if (_platform == "Linux") then {  ////Professor Sugon says on deez nuts for all Linux users
         {
@@ -78,10 +78,10 @@ if (alive _veh && canMove _veh) then
 			};
 			sleep (2 + random 2);
 		} forEach units _groupX;
-    } else {
+    } else { */
 		[_veh] call A3A_fnc_smokeCoverAuto;
 		[_veh] spawn AR_Rappel_All_Cargo;
-	};
+	//};
 };
 
 waitUntil {sleep 0.5; (not alive _veh) or ((count assignedCargo _veh == 0) and (([_veh] call A3A_fnc_countAttachedObjects) == 0))};

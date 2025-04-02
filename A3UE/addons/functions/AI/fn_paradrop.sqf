@@ -21,7 +21,7 @@ Dependencies:
 Example:
 [_myPlane, _ODSTgroup, _targetPos, "CSAT_Carrier"] call A3A_fnc_initSupportCooldowns;
 */
-#include "..\..\script_component.hpp"
+#include "..\script_component.hpp"
 FIX_LINE_NUMBERS()
 params
 [

@@ -1,4 +1,4 @@
-#include "..\..\script_component.hpp"
+#include "..\script_component.hpp"
 FIX_LINE_NUMBERS()
 
 //Make sure logLevel is always initialised.
@@ -44,10 +44,10 @@ if !(isServer) then {
     [] execVM QPATHTOFOLDER(Scripts\aslr_client_init.sqf);/* AdvancedSlingLoadingRefactored\ */
     private _platformData = productVersion;
     private _platform = _platformData select 6;
-    if (_platform != "Linux") then {
-        [] execVM QPATHTOFOLDER(Scripts\AR_AdvancedRappelling\functions\fn_advancedRappellingInit.sqf);
-        [] execVM QPATHTOFOLDER(Scripts\Advanced_Urban_Rappelling_ACEFIX\functions\fn_advancedUrbanRappellingInit.sqf);
-    }; ////Professor Sugon says on deez nuts for all Linux users
+    //if (_platform != "Linux") then {
+    [] execVM QPATHTOFOLDER(Scripts\AR_AdvancedRappelling\functions\fn_advancedRappellingInit.sqf);
+    [] execVM QPATHTOFOLDER(Scripts\Advanced_Urban_Rappelling_ACEFIX\functions\fn_advancedUrbanRappellingInit.sqf);
+    //}; ////Professor Sugon says on deez nuts for all Linux users
     
     if (enableSpectrumDevice) then {
         [] execVM QPATHTOFOLDER(Scripts\SpectumDevice\spectrum_device.sqf);

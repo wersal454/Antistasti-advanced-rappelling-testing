@@ -634,9 +634,9 @@ AR_Enable_Rappelling_Animation_Client = {
 		[[_player],"AR_Enable_Rappelling_Animation"] call AR_RemoteExecServer;
 	};
 
-	if(_player != player) then {
+	/* if(_player != player) then {
 		_player enableSimulation false;
-	};
+	}; */
 	
 	if(call AR_Has_Addon_Animations_Installed) then {		
 		if([_player] call AR_Current_Weapon_Type_Selected == "HANDGUN") then {

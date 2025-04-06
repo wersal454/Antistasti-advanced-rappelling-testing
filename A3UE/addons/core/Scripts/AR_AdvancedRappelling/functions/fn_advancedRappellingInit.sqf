@@ -584,12 +584,10 @@ AR_Client_Rappel_From_Heli = {
 			};
 			
 		};
-		
-		ropeDestroy _topRope;
-		ropeDestroy _bottomRope;		
+			
 		deleteVehicle _anchor;
-		deleteVehicle _rappelDevice;
-		
+		_rappelDevice ropeDetach _bottomRope;
+
 		_player setVariable ["AR_Is_Rappelling",nil,true];
 		_player setVariable ["AR_Rappelling_Vehicle", nil, true];
 		_player setVariable ["AR_Detach_Rope",nil];
@@ -603,8 +601,13 @@ AR_Client_Rappel_From_Heli = {
 		};
 		
 		sleep 2;
-		
-		_player allowDamage true;	
+
+    	_player allowDamage true;
+
+    	sleep 10;
+		deleteVehicle _rappelDevice;
+    	ropeDestroy _topRope;
+    	ropeDestroy _bottomRope;
 
 	} else {
 		[_this,"AR_Client_Rappel_From_Heli",_player] call AR_RemoteExec;
